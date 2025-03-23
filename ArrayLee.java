@@ -22,14 +22,14 @@ public class ArrayLee{
 
 
                                                     // ArrayList
-            // создаём пустой Array List    
+            // создаём пустой Array List с дженериком   
             ArrayList<String> myArrayList1 = new ArrayList<>();
 
-            // создаём Array List с 12-ю ячейками
-            ArrayList myArrayList2 = new ArrayList<>(12);
+            // создаём Array List с 12-ю ячейками без дженерика
+            ArrayList myArrayList2 = new ArrayList(12);
 
             // копируем myArrayList2 в myArrayList3
-            ArrayList myArrayList3 = new ArrayList<>(myArrayList2);
+            ArrayList<String> myArrayList3 = new ArrayList<>(myArrayList2);
             
             // создаём myArrayListInt с данными типа Integer с 5-ю ячейками
             ArrayList<Integer> myArrayListInt = new ArrayList<Integer>(5);
@@ -50,7 +50,6 @@ public class ArrayLee{
             // для каждого элемента strArr в myArrayListStr2
             for (String[] strArr : myArrayListStr2){
 
-                
                 // перевести этот элемент к строке (Arrays.toString(strArr)) и вывести на экран
                 System.out.println(Arrays.toString(strArr));
             }
@@ -90,15 +89,18 @@ public class ArrayLee{
             }
 
             String listCar1 = myHashMap.get(12);
+            
             System.out.println(myHashMap.size() + " - размер карты.");
-            System.out.println(listCar1 + " - содержание 12 ключа.");
-            myHashMap.remove(12);  // удаляем содержание по 12 ключу
-            System.out.println( "удаляем содержание по 12 ключу.");
-            System.out.println(myHashMap.get(12) + " - новое содержание 12 ключа.");
-            System.out.println(myArrayList1.get(28) + " - содержание 28 ключа.");
-            myArrayList1.remove(28);  //  удаляем содержание по 28 ключу
-            System.out.println(" - удалено содержание по 28 ключу.");
-            System.out.println(myArrayList1.get(28) + " - новое содержание 28 ключа.");
+            System.out.println(listCar1 + " - содержимое 12 ключа.");
+            myHashMap.remove(12);  // удаляем содержимое по 12 ключу
+            System.out.println( "удаляем содержимое по 12 ключу.");
+            System.out.println(myHashMap.get(12) + " - новое содержимое 12 ключа.");
+            System.out.println(myArrayList1.get(28) + " - содержимое 28 индекса.");
+            myArrayList1.remove(28);  //  удаляем содержимое по 28 индексу
+            System.out.println(" - удалено содержимое по 28 ключу.");
+            System.out.println(myArrayList1.get(28) + " - новое содержимое 28 индекса.");
             System.out.println(myArrayList1.size() + " - размер массива.");
-    }
+            System.out.println(Arrays.toString(myArrayList1.get(0).split(",")) + " - содержимое 0 индекса.");
+
+        }
 }
